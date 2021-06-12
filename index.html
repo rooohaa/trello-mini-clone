@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap"
+         rel="stylesheet"
+      />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      />
+      <link rel="stylesheet" href="style.css" />
+      <title>Trello Mini Clone</title>
+   </head>
+   <body>
+      <header>
+         <h2>Trello Dashboard</h2>
+         <button class="add-btn"><i class="fas fa-plus"></i></button>
+      </header>
+
+      <section id="app">
+         <div class="container">
+            <div class="task-cols">
+               <div class="col" data-type="open">
+                  <h4>Open</h4>
+                  <div class="task-item open" id="item1" draggable="true">
+                     Learn JavaScript
+                     <button class="delete-item-btn">&times;</button>
+                  </div>
+               </div>
+               <div class="col" data-type="progress">
+                  <h4>In progress</h4>
+               </div>
+               <div class="col" data-type="review">
+                  <h4>In review</h4>
+               </div>
+               <div class="col" data-type="done">
+                  <h4>Done</h4>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <div class="overlay">
+         <div class="modal">
+            <h2>Fill out form and add task</h2>
+            <form id="task-form">
+               <input type="text" placeholder="Task description" required />
+               <button type="submit">Add task</button>
+            </form>
+            <button class="exit-btn">&times;</button>
+         </div>
+      </div>
+
+      <script src="script.js"></script>
+   </body>
+</html>
