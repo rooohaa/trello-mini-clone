@@ -98,13 +98,16 @@ function dragleave(e) {
 function dragdrop(e) {
    const draggedElementId = e.dataTransfer.getData('text/plain');
    const dropCol = e.target;
-   const colType = dropCol.getAttribute('data-type');
 
-   const elementToDrop = document.querySelector(`#${draggedElementId}`);
-   elementToDrop.className = `task-item ${colType}`;
+   if (dropCol.classList.contains('col')) {
+      const colType = dropCol.getAttribute('data-type');
 
-   dropCol.classList.remove('hovered');
-   dropCol.appendChild(elementToDrop);
+      const elementToDrop = document.querySelector(`#${draggedElementId}`);
+      elementToDrop.className = `task-item ${colType}`;
+
+      dropCol.classList.remove('hovered');
+      dropCol.appendChild(elementToDrop);
+   }
 }
 
 function generateUniqueID() {
